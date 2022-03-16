@@ -28,8 +28,13 @@ export function createPhoneNumber(numbers : number[]){
         + numbers.substring(6);
   }
 
+  export function createPhoneNumber3(numbers){
+  return numbers.join('').replace(/(...)(...)(.*)/, '($1) $2-$3');
+}
+
 module.exports = {
     createPhoneNumber,
     createPhoneNumber1,
     createPhoneNumber2,
+    createPhoneNumber3,
 };
