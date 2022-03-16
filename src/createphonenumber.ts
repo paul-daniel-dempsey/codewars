@@ -9,6 +9,27 @@ export function createPhoneNumber(numbers : number[]){
     return `(${prefix}) ${mid}-${suffix}`
   }
 
+  export function createPhoneNumber1(numbers){
+    var format = "(xxx) xxx-xxxx";
+    
+    for(var i = 0; i < numbers.length; i++)
+    {
+      format = format.replace('x', numbers[i]);
+    }
+    
+    return format;
+  }
+
+  export function createPhoneNumber2(numbers){
+    numbers = numbers.join('');
+    return '(' + numbers.substring(0, 3) + ') ' 
+        + numbers.substring(3, 6) 
+        + '-' 
+        + numbers.substring(6);
+  }
+
 module.exports = {
-    createPhoneNumber
+    createPhoneNumber,
+    createPhoneNumber1,
+    createPhoneNumber2,
 };
